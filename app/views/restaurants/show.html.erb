@@ -1,2 +1,35 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<div class="container my-5">
+  <div class="row justify-content-between">
+    <div class="col-xs-12 col-sm-6">
+      <h1 class="my-5"><%= @restaurant.name %></h1>
+      <table class="table my-5">
+        <tbody>
+          <tr>
+            <th scope="row">Address</th>
+            <td><%= @restaurant.address %></td>
+          </tr>
+          <tr>
+            <th scope="row">Phone</th>
+            <td><%= @restaurant.phone_number %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="my-5">
+        <% Restaurant::CATEGORIES.each do |cat| %>
+          <span class= "btn <%= cat == @restaurant.category ? "btn-info" : "btn-light" %>">
+            <%= cat %>
+          </span>
+       <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="my-5 bg-light rounded p-3">
+        <%= render "restaurants/review_card" %>
+        <br>
+        <div>
+          <%= render "restaurants/review_form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, placeholder: "Johny's Doughnuts", label_html: {class: "sr-only"} %>
+  <%= f.input :address, placeholder: "London", label_html: {class: "sr-only"}  %>
+  <%= f.input :phone_number, placeholder: "+33 6586 44443", label_html: {class: "sr-only"}  %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Choose category", label_html: {class: "sr-only"}  %>
+  <%= f.submit "Add new!", class: "btn btn-success" %>
+<% end %>

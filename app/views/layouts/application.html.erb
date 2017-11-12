@@ -12,6 +12,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div id="wrapper" style="min-height: calc(100vh - 70px - 70px); ">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>

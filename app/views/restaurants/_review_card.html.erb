@@ -1,0 +1,7 @@
+        <% @restaurant.reviews.each do |r| %>
+          <% r.rating.times do %>
+            <%= icon("star", class: "text-warning") %>
+          <% end %>
+          <p><%= r.content %></p>
+          <hr>
+        <% end %>
